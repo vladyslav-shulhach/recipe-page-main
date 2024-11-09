@@ -3,18 +3,22 @@
 
 body {
     background-color: hsl(30, 54%, 90%);
+    margin: 0;
+    padding: 0;
 }
 
 main {
     background-color: white;
     margin: 123px 351px;
     padding: 41px;
+    border-radius: 25px;
     overflow: hidden;
 }
 
 .main-image {
     width: 100%;
     height: auto;
+    border-radius: 16px;
     display: block;
 }
 
@@ -23,13 +27,99 @@ h2 {
     font-family: "Young Serif", serif;
     font-weight: 400;
     font-style: normal;
+    color: hsl(14, 45%, 36%);
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 48px;
+    color: hsl(24, 5%, 18%);
 }
 
 p {
+    margin: 0;
     font-family: "Outfit", sans-serif;
+    font-size: 16px;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    color: hsl(30, 10%, 34%);
+    text-align: justify;
+}
+
+span {
+    font-weight: 600;
+    color: hsl(24, 5%, 18%);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.preparation-time {
+    padding: 30px;
+    background-color: hsl(330, 100%, 98%);
+    border-radius: 16px;
+}
+
+.preparation-time h2,
+.preparation-time h2 p {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 22px;
+    color: hsl(332, 51%, 32%);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 40px;
+}
+
+ul li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Bullet style */
+ul li::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: hsl(332, 51%, 32%);
+    border-radius: 50%;
+
+}
+
+ol {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+ol li {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-family: "Outfit", sans-serif;
+}
+
+ol li::before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    left: -30px;
+    transform: translateY(-50%);
+    color: hsl(30, 10%, 34%);
+}
+
+ol {
+    counter-reset: item;
+}
+
+.ingredients ul li::before {
+    background-color: hsl(14, 45%, 36%);
 }
 
 .attribution {
