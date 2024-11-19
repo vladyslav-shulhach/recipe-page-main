@@ -1,126 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
 
-body {
-    background-color: hsl(30, 54%, 90%);
+/* Variables */
+
+:root {
+    /* Colors */
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --white: hsl(0, 0%, 100%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+
+    /* Fonts & Typography */
+    --title-font: "Young Serif", serif;
+    --text-font: "Outfit", sans-serif;
+    --text-size: 1rem;
+    --subtitle-size: 1.375rem;
+    --title-size: 1.75rem;
+    --large-title-size: 2.5rem;
+    --normal-font-weight: 400;
+    --bold-font-weight: 600;
+    --bolder-font-weight: 700;
+}
+
+/* Base */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-main {
-    background-color: white;
-    margin: 123px 351px;
-    padding: 41px;
-    border-radius: 25px;
-    overflow: hidden;
+body {
+    background-color: var(--stone-100);
+    font-family: var(--text-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.main-image {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    display: block;
+p,
+li {
+    color: var(--stone-600);
+    line-height: 140%;
 }
 
 h1,
 h2 {
-    font-family: "Young Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: hsl(14, 45%, 36%);
+    font-family: var(--title-font);
 }
 
-h1 {
-    margin: 20px 0;
-    font-size: 48px;
-    color: hsl(24, 5%, 18%);
+h2 {
+    font-size: var(--title-size);
+    color: var(--brown-800);
 }
 
-p {
-    margin: 0;
-    font-family: "Outfit", sans-serif;
-    font-size: 16px;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    color: hsl(30, 10%, 34%);
-    text-align: justify;
+ul,
+ol {
+    padding: 0 2rem 0 1.5rem;
+    display: grid;
+    gap: 14px;
 }
 
-span {
-    font-weight: 600;
-    color: hsl(24, 5%, 18%);
+li {
+    padding-left: 1.5rem;
 }
 
-section {
-    margin-bottom: 40px;
+li::marker {
+    color: var(--brown-800);
+    font-weight: var(--bolder-font-weight);
 }
 
-.preparation-time {
+/* Reusable class */
+
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.line-break {
+    height: 1px;
+    background-color: var(--stone-150);
+}
+
+/* Page Styles */
+
+.page {
+    background-color: var(--white);
+    margin: 123px 352px;
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recipe__image {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.recipe__title {
+    color: var(--stone-900);
+    font-size: var(--large-title-size);
+}
+
+.preparation {
     padding: 30px;
-    background-color: hsl(330, 100%, 98%);
-    border-radius: 16px;
+    background-color: var(--rose-50);
+    border-radius: 12px;
 }
 
-.preparation-time h2,
-.preparation-time h2 p {
-    margin: 0;
-    padding: 0;
-    font-weight: 600;
-    font-size: 22px;
-    color: hsl(332, 51%, 32%);
+.preparation__title {
+    font-family: var(--text-font);
+    font-weight: var(--bolder-font-weight);
+    font-size: var(--subtitle-size);
+    color: var(--rose-800);
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 40px;
+.preparation__list li::marker {
+    color: var(--rose-800);
 }
 
-ul li {
-    position: relative;
-    margin-bottom: 10px;
-}
-
-/* Bullet style */
-ul li::before {
-    content: '';
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 4px;
-    background-color: hsl(332, 51%, 32%);
-    border-radius: 50%;
-
-}
-
-ol {
-    padding-left: 0;
-    list-style-type: none;
-}
-
-ol li {
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-family: "Outfit", sans-serif;
-}
-
-ol li::before {
-    content: counter(item) ". ";
-    counter-increment: item;
-    left: -30px;
-    transform: translateY(-50%);
-    color: hsl(30, 10%, 34%);
-}
-
-ol {
-    counter-reset: item;
-}
-
-.ingredients ul li::before {
-    background-color: hsl(14, 45%, 36%);
-}
+/*
 
 .attribution {
     font-size: 11px;
@@ -129,4 +135,10 @@ ol {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+*/
+
+footer {
+    display: none;
 }
