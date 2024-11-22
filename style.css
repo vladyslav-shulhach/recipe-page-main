@@ -35,6 +35,7 @@ body {
     background-color: var(--stone-100);
     font-family: var(--text-font);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -73,6 +74,13 @@ li::marker {
     color: var(--brown-800);
     font-size: 0.8rem;
     font-weight: var(--bold-font-weight);
+}
+
+footer {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    padding: 10px;
 }
 
 /* Reusable class */
@@ -133,6 +141,11 @@ li::marker {
     font-size: var(--normal-font-weight);
 }
 
+.nutrition {
+    display: grid;
+    gap: 15px;
+}
+
 .nutrition__table {
     border-collapse: collapse;
     width: 100%;
@@ -151,9 +164,6 @@ li::marker {
     color: var(--brown-800);
 }
 
-
-/*
-
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -163,13 +173,7 @@ li::marker {
     color: hsl(228, 45%, 44%);
 }
 
-*/
-
-footer {
-    display: none;
-}
-
-/* For small devices */
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
 
     h1,
@@ -204,7 +208,22 @@ footer {
         font-size: calc(var(--large-title-size) - 0.25rem);
     }
 
-
+    footer {
+        width: 100%;
+        background-color: var(--white);
+    }
 }
 
-/* For medium devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .page {
+        margin: 82px 234px;
+        padding: 25px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .page {
+        margin: 102px 296px;
+        padding: 30px;
+    }
+}
