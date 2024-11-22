@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
-
 /* Variables */
 
 :root {
@@ -44,7 +41,8 @@ body {
 }
 
 p,
-li {
+li,
+td {
     color: var(--stone-600);
     line-height: 140%;
 }
@@ -56,6 +54,7 @@ h2 {
 
 h2 {
     font-size: var(--title-size);
+    font-weight: var(--normal-font-weight);
     color: var(--brown-800);
 }
 
@@ -63,23 +62,25 @@ ul,
 ol {
     padding: 0 2rem 0 1.5rem;
     display: grid;
-    gap: 14px;
+    gap: 10px;
 }
 
 li {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 li::marker {
     color: var(--brown-800);
-    font-weight: var(--bolder-font-weight);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font-weight);
 }
 
 /* Reusable class */
 
-.grid {
+.grid:not(:last-of-type) {
     display: grid;
     gap: 16px;
+    margin-bottom: 16px;
 }
 
 .line-break {
@@ -102,11 +103,13 @@ li::marker {
 .recipe__image {
     width: 100%;
     border-radius: 12px;
+    margin-bottom: 16px;
 }
 
 .recipe__title {
     color: var(--stone-900);
     font-size: var(--large-title-size);
+    font-weight: var(--normal-font-weight);
 }
 
 .preparation {
@@ -117,7 +120,7 @@ li::marker {
 
 .preparation__title {
     font-family: var(--text-font);
-    font-weight: var(--bolder-font-weight);
+    font-weight: var(--bold-font-weight);
     font-size: var(--subtitle-size);
     color: var(--rose-800);
 }
@@ -125,6 +128,29 @@ li::marker {
 .preparation__list li::marker {
     color: var(--rose-800);
 }
+
+.instructions__list li::marker {
+    font-size: var(--normal-font-weight);
+}
+
+.nutrition__table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.nutrition__row:not(:last-of-type) {
+    border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition__cell {
+    padding: 14px 32px;
+}
+
+.nutrition__cell:nth-child(2) {
+    font-weight: bold;
+    color: var(--brown-800);
+}
+
 
 /*
 
@@ -142,3 +168,43 @@ li::marker {
 footer {
     display: none;
 }
+
+/* For small devices */
+@media screen and (max-width: 768px) {
+
+    h1,
+    h2 {
+        line-height: 100%;
+    }
+
+    p,
+    li {
+        line-height: 150%;
+    }
+
+    .page {
+        margin: 0;
+        padding: 32px;
+        border-radius: 0px;
+        gap: 20px;
+    }
+
+    .grid {
+        gap: 24px;
+    }
+
+    .recipe__image {
+        width: calc(100% + 64px);
+        margin-left: -32px;
+        margin-top: -32px;
+        border-radius: 0px;
+    }
+
+    .recipe__title {
+        font-size: calc(var(--large-title-size) - 0.25rem);
+    }
+
+
+}
+
+/* For medium devices */
