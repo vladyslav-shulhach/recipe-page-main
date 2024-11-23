@@ -35,7 +35,7 @@ This project is a solution to the [Recipe page challenge on Frontend Mentor](htt
 
 ### What I learned
 
-**`li::marker`**: 
+**`li::marker`:**
    - This pseudo-element targets the list item markers (`<li>`). It lets you change the way the list bullets look, for example, by changing their colour or size.
 
    ```css
@@ -46,8 +46,19 @@ This project is a solution to the [Recipe page challenge on Frontend Mentor](htt
     }
    ```
 
-**`:not(:last-of-type)`**:
+**`:not(:last-of-type)`:**
   - This selector is a combination of (`:not`) and (`:last-of-type`). It selects all elements except the last-of-type in the parent element. That is useful for styling elements that are not the last of a group.
+
+**`:nth-child()`:**
+  - The `:nth-child()` selector allows you to target elements based on their order within a parent. It is particularly useful when you want to style specific items without adding extra classes. In this case, the selector is used to apply styles to the second child of elements with the `.nutrition__cell` class.
+
+   ```css
+   .nutrition__cell:nth-child(2) {
+       font-weight: bold; /* Makes the second cell text bold */
+       color: var(--brown-800); /* Changes the text color to a predefined brown shade */
+   }
+   ```
+
 
 ## Author
 
