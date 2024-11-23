@@ -35,6 +35,19 @@ This project is a solution to the [Recipe page challenge on Frontend Mentor](htt
 
 ### What I learned
 
+**`li::marker`**: 
+   - This pseudo-element targets the list item markers (`<li>`). It lets you change the way the list bullets look, for example, by changing their colour or size.
+
+   ```css
+   li::marker {
+    color: var(--brown-800);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font-weight);
+    }
+   ```
+
+**`:not(:last-of-type)`**:
+  - This selector is a combination of (`:not`) and (`:last-of-type`). It selects all elements except the last-of-type in the parent element. That is useful for styling elements that are not the last of a group.
 
 ## Author
 
