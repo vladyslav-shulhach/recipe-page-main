@@ -20,7 +20,7 @@ This project is a solution to the [Recipe page challenge on Frontend Mentor](htt
 
 ### Links
 
-- Solution URL: [here]()
+- Solution URL: [here](https://www.frontendmentor.io/solutions/recipe-page-solution-qXhAmi9siQ)
 - Live Site URL: [here](https://recipe-page-main-six-blond.vercel.app/)
 
 ## My process
